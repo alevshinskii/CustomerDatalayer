@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\CustomerRepository\CustomerRepository.csproj" />
+    <ProjectReference Include="..\..\src\CustomerManagement\CustomerManagement.csproj" />
   </ItemGroup>
 
   <ItemGroup>
