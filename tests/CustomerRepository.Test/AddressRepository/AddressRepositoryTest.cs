@@ -1,5 +1,4 @@
 ﻿using CustomerRepository.Entities;
-using CustomerRepository.Test.CustomerRepository;
 
 namespace CustomerRepository.Test.AddressRepository;
 
@@ -20,11 +19,11 @@ public class AddressRepositoryTest
         Fixture.DeleteAll();
 
         Repositories.AddressRepository repository = Fixture.GetAddressRepository();
-        Address customer = Fixture.GetAddress();
+        Address address = Fixture.GetAddress();
 
-        var createdCustomer = repository.Create(customer);
+        var createdAddress = repository.Create(address);
 
-        Assert.NotNull(createdCustomer);
+        Assert.NotNull(createdAddress);
     }
 
     [Fact]

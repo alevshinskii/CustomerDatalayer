@@ -14,7 +14,15 @@ public class CustomerRepositoryFixture
         await using var connection = repository.GetConnection();
         connection.Open();
 
-        var command = new SqlCommand("DELETE FROM Customer", connection);
+        var command = new SqlCommand("DELETE FROM Address", connection);
+
+        command.ExecuteNonQuery();
+
+        command = new SqlCommand("DELETE FROM Notes", connection);
+
+        command.ExecuteNonQuery();
+
+        command = new SqlCommand("DELETE FROM Customer", connection);
 
         command.ExecuteNonQuery();
 
