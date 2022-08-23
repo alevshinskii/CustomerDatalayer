@@ -43,14 +43,14 @@ public class CustomerRepository : BaseRepository, IRepository<Customer>
 
         command.ExecuteNonQuery();
 
-        var commandScope = new SqlCommand("SELECT IDENT_CURRENT('Customer') as Scope", connection);
+        var commandScope = new SqlCommand("SELECT IDENT_CURRENT('Customer') as Id", connection);
         using var reader = commandScope.ExecuteReader();
+        int idOfCreatedEntity = 0;
         if (reader.Read())
         {
-            var idOfCreatedEntity = reader["Scope"];
-            return Read(int.Parse(idOfCreatedEntity.ToString() ?? string.Empty));
+            idOfCreatedEntity = int.Parse(reader["Id"].ToString() ?? string.Empty);
         }
-        return null;
+        return Read(idOfCreatedEntity);
     }
 
     public Customer Read(int entityId)
