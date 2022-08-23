@@ -1,9 +1,9 @@
-﻿using CustomerRepository.Entities;
-using CustomerRepository.Interfaces;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Data;
+using CustomerManagement.Entities;
+using CustomerManagement.Interfaces;
 
-namespace CustomerRepository.Repositories;
+namespace CustomerManagement.Repositories;
 
 public class NoteRepository:BaseRepository,IRepository<Note>
 {

@@ -1,33 +1,24 @@
 ﻿using System.Data.SqlClient;
-using CustomerRepository.Entities;
+using CustomerManagement.Entities;
 using Respawn;
-using Respawn.Graph;
 
-namespace CustomerRepository.Test.CustomerRepository;
+namespace CustomerManagement.Test.CustomerRepository;
 
 public class CustomerRepositoryFixture
 {
+    private static Checkpoint checkpoint = new Checkpoint { };
 
-    public async void DeleteAll()
+    public void DeleteAll()
     {
+        
         var repository = GetCustomerRepository();
-        await using var connection = repository.GetConnection();
+
+        using var connection = repository.GetConnection();
         connection.Open();
 
-        var command = new SqlCommand("DELETE FROM Address", connection);
-
-        command.ExecuteNonQuery();
-
-        command = new SqlCommand("DELETE FROM Notes", connection);
-
-        command.ExecuteNonQuery();
-
-        command = new SqlCommand("DELETE FROM Customer", connection);
-
-        command.ExecuteNonQuery();
+        checkpoint.Reset(connection);
 
         connection.Close();
-
     }
 
     public Customer GetCustomer()

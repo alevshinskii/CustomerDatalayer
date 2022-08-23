@@ -1,7 +1,6 @@
-﻿using CustomerRepository.Entities;
-using CustomerRepository.Test.AddressRepository;
+﻿using CustomerManagement.Entities;
 
-namespace CustomerRepository.Test.NoteRepository;
+namespace CustomerManagement.Test.NoteRepository;
 
 public class NoteRepositoryTest
 {

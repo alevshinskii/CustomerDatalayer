@@ -1,24 +1,14 @@
-﻿using CustomerRepository.Entities;
-using CustomerRepository.Test.CustomerRepository;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
+using CustomerManagement.Entities;
+using CustomerManagement.Test.CustomerRepository;
 
-namespace CustomerRepository.Test.AddressRepository;
+namespace CustomerManagement.Test.AddressRepository;
 
 public class AddressRepositoryFixture
 {
     private readonly CustomerRepositoryFixture customerFixture = new CustomerRepositoryFixture();
-    public async void DeleteAll()
+    public void DeleteAll()
     {
-        var repository = GetAddressRepository();
-        await using var connection = repository.GetConnection();
-        connection.Open();
-
-        var command = new SqlCommand("DELETE FROM Address", connection);
-
-        command.ExecuteNonQuery();
-
-        connection.Close();
-
         customerFixture.DeleteAll();
     }
 

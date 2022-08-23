@@ -1,4 +1,4 @@
-﻿namespace CustomerRepository.Interfaces;
+﻿namespace CustomerManagement.Interfaces;
 
 public interface IRepository<TEntity>
 {

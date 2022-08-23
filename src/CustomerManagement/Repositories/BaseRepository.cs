@@ -1,6 +1,6 @@
 ﻿using System.Data.SqlClient;
 
-namespace CustomerRepository.Repositories;
+namespace CustomerManagement.Repositories;
 
 public class BaseRepository
 {

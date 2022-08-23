@@ -1,4 +1,4 @@
-﻿namespace CustomerRepository.Entities;
+﻿namespace CustomerManagement.Entities;
 
 public class Address
 {

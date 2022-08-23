@@ -1,24 +1,14 @@
 ﻿using System.Data.SqlClient;
-using CustomerRepository.Entities;
-using CustomerRepository.Test.CustomerRepository;
+using CustomerManagement.Entities;
+using CustomerManagement.Test.CustomerRepository;
 
-namespace CustomerRepository.Test.NoteRepository;
+namespace CustomerManagement.Test.NoteRepository;
 
 public class NoteRepositoryFixture
 {
     private readonly CustomerRepositoryFixture customerFixture = new CustomerRepositoryFixture();
-    public async void DeleteAll()
+    public void DeleteAll()
     {
-        var repository = GetNoteRepository();
-        await using var connection = repository.GetConnection();
-        connection.Open();
-
-        var command = new SqlCommand("DELETE FROM Notes", connection);
-
-        command.ExecuteNonQuery();
-
-        connection.Close();
-
         customerFixture.DeleteAll();
     }
 

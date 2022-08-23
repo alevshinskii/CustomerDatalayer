@@ -1,6 +1,6 @@
-using CustomerRepository.Entities;
+using CustomerManagement.Entities;
 
-namespace CustomerRepository.Test.CustomerRepository
+namespace CustomerManagement.Test.CustomerRepository
 {
     public class CustomerRepositoryTest
     {

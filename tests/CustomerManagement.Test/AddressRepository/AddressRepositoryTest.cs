@@ -1,6 +1,6 @@
-﻿using CustomerRepository.Entities;
+﻿using CustomerManagement.Entities;
 
-namespace CustomerRepository.Test.AddressRepository;
+namespace CustomerManagement.Test.AddressRepository;
 
 public class AddressRepositoryTest
 {
